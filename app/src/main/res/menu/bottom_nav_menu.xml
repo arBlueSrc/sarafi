@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/arzFragment"
+        android:icon="@drawable/ic_arz"
+        android:title="@string/arz" />
+    <item
+        android:id="@+id/sekeFragment"
+        android:icon="@drawable/ic_seke"
+        android:title="@string/seke" />
+    <item
+        android:id="@+id/carFragment"
+        android:icon="@drawable/ic_car"
+        android:title="@string/car" />
+</menu>

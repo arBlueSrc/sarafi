@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">صرافی آنلاین</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name_splash">نرم افزار تسک شرکت اپلیکا</string>
+    <string name="dec_home1">مشاهده اخرین قیمت های امروز</string>
+
+    //for data binding
+    <string name="doller_format">قیمت دلار امروز :</string>
+    <string name="home">خانه</string>
+    <string name="arz">ارز</string>
+    <string name="seke">سکه</string>
+    <string name="car">خودرو</string>
+    <string name="dec_home_2">صرافی های معتبر</string>
+    <string name="update">بروز رسانی</string>
+    <string name="dec_other_frag">برای تازه سازی دکمه بروزرسانی در صفحه نخست را بزنید</string>
+</resources>

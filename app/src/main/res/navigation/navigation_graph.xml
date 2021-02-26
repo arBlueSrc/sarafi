@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    android:label="navigation_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.arash.applikatask.ui.splash.SplashFragment"
+        android:label="splash_fragment"
+        tools:layout="@layout/splash_fragment">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.arash.applikatask.ui.home.HomeFragment"
+        android:label="homeFragment"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_arzFragment"
+            app:destination="@id/arzFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_carFragment"
+            app:destination="@id/carFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sekeFragment"
+            app:destination="@id/sekeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/arzFragment"
+        android:name="com.arash.applikatask.ui.arz.ArzFragment"
+        android:label="arzFragment"
+        tools:layout="@layout/arz_fragment" />
+    <fragment
+        android:id="@+id/carFragment"
+        android:name="com.arash.applikatask.ui.car.CarFragment"
+        android:label="carFragment"
+        tools:layout="@layout/car_fragment" />
+    <fragment
+        android:id="@+id/sekeFragment"
+        android:name="com.arash.applikatask.ui.seke.SekeFragment"
+        android:label="sekeFragment"
+        tools:layout="@layout/seke_fragment" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.arash.applikatask.ui.info.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+</navigation>
