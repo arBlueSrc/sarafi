@@ -22,7 +22,7 @@ class HomeFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = HomeFragmentBinding.inflate(inflater)
         binding.data = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -108,10 +108,17 @@ class HomeFragment : BaseFragment() {
     private fun updateDollarPrice() {
 
         PriceRepository.getFilterPrice(requireContext(), "arz")?.observe(viewLifecycleOwner, {
-            binding.textView5.text =
-                it.filter { filter -> filter.Name.equals("دلار") }.get(0).Price.let {
-                    "قیمت دلار امروز : $it تومان"
+            binding.textView5.text = (if (it?.filter { filter -> filter.Name.equals("دلار") }?.size!! > 0) {
+
+                    it?.filter { filter -> filter.Name.equals("دلار") }?.get(0)?.Price.let {
+                        "قیمت دلار امروز : $it تومان"
+
                 }
+
+            } else {
+                "دکمه بروزرسانی را بزنید"
+            }).toString()
+
         })
     }
 
