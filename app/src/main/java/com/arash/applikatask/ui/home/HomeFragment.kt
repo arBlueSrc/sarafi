@@ -1,5 +1,7 @@
 package com.arash.applikatask.ui.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,8 @@ import com.arash.applikatask.localdb.PriceRepository
 import com.arash.applikatask.model.localdbmodel.DbModel
 import com.arash.applikatask.ui.arz.ArzAdapter
 import com.arash.applikatask.utils.bases.BaseFragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment() {
@@ -47,6 +51,29 @@ class HomeFragment : BaseFragment() {
         //on info button clicked
         onInfoClick()
 
+        //download nobitex logo with glide
+        downloadLogo()
+
+        //go to site nobitex for crypto currency
+        goSiteClick()
+
+    }
+
+    private fun goSiteClick() {
+        binding.btnSite.setOnClickListener {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://nobitex.ir/")
+                )
+            )
+        }
+    }
+
+    private fun downloadLogo() {
+        Glide.with(requireContext()).load("https://cdn.nobitex.ir/logo/nobitex.png")
+            .apply(RequestOptions().centerCrop())
+            .into(binding.imgLogo)
     }
 
     private fun observeData() {
@@ -123,7 +150,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun onUpdateClick() {
-        binding.button.setOnClickListener {
+        binding.btnUpdate.setOnClickListener {
             viewModel.getData()
         }
     }

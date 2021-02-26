@@ -11,7 +11,7 @@
     <string name="arz">ارز</string>
     <string name="seke">سکه</string>
     <string name="car">خودرو</string>
-    <string name="dec_home_2">صرافی های معتبر</string>
+    <string name="dec_home_2">صرافی ارزهای دیجیتال</string>
     <string name="update">بروز رسانی</string>
     <string name="dec_other_frag">برای تازه سازی دکمه بروزرسانی در صفحه نخست را بزنید</string>
 
@@ -23,4 +23,6 @@
 
     //version
     <string name="version">version 1</string>
+    <string name="nobitex_site">سایت نوبیتکس</string>
+    <string name="dec_home_4">مرجع معتبر قیمت ارزهای دیجیتال</string>
 </resources>
