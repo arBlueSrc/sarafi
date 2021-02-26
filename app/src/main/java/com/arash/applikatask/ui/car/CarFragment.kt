@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.SearchView
 import com.arash.applikatask.databinding.CarFragmentBinding
 import com.arash.applikatask.localdb.PriceRepository
-import com.arash.applikatask.ui.arz.ArzAdapter
 import com.arash.applikatask.utils.bases.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

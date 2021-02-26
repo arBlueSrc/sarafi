@@ -1,9 +1,11 @@
 package com.arash.applikatask.localdb
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.arash.applikatask.model.localdbmodel.DbModel
-import java.util.*
 
 
 @Dao

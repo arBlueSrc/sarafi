@@ -8,7 +8,6 @@ import android.widget.Filterable
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.arash.applikatask.databinding.RecyclerItemArzBinding
 import com.arash.applikatask.databinding.RecyclerItemCarBinding
 import com.arash.applikatask.model.localdbmodel.DbModel
 import java.util.*

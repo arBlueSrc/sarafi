@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.arash.applikatask.R
 import com.arash.applikatask.databinding.HomeFragmentBinding
 import com.arash.applikatask.localdb.PriceRepository
 import com.arash.applikatask.model.localdbmodel.DbModel
-import com.arash.applikatask.ui.arz.ArzAdapter
 import com.arash.applikatask.utils.bases.BaseFragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -57,6 +57,19 @@ class HomeFragment : BaseFragment() {
         //go to site nobitex for crypto currency
         goSiteClick()
 
+        //handle back buton
+        onBackPress()
+
+    }
+
+    fun onBackPress() {
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true /* enabled by default */) {
+                override fun handleOnBackPressed() {
+                    requireActivity().finish()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), callback)
     }
 
     private fun goSiteClick() {
