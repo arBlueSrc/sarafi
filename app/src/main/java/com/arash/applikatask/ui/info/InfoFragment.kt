@@ -27,11 +27,14 @@ class InfoFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //on back press handling
         onBackPress()
         onBackShape()
 
+        //on instagram button
         onInstagramClick()
 
+        //on linkedin button
         onLinkedinClick()
 
     }

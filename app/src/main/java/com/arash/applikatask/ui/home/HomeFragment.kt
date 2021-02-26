@@ -43,10 +43,8 @@ class HomeFragment : BaseFragment() {
         //observe retrofit getting data and put it into room
         observeData()
 
-
         //click update btn will get data from server and put it into room
         onUpdateClick()
-
 
         //on info button clicked
         onInfoClick()

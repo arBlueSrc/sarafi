@@ -20,7 +20,7 @@ class SekeFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = SekeFragmentBinding.inflate(inflater)
         return binding.root
     }
@@ -28,14 +28,21 @@ class SekeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //get data from local db
+        getDataFromLocalDB()
 
+        //handle search view
+        //visible and invisible title
+        //commands on searching
+        onSearchView()
+    }
+
+    private fun getDataFromLocalDB() {
         PriceRepository.getFilterPrice(requireContext(),"seke")?.observe(viewLifecycleOwner,{
             viewModel.updateList(it)
             arzAdapter = ArzAdapter(it)
             binding.rv.adapter = arzAdapter
         })
-
-        onSearchView()
     }
 
     private fun onSearchView() {
@@ -58,7 +65,7 @@ class SekeFragment : BaseFragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
 
-                arzAdapter.getFilter()?.filter(newText);
+                arzAdapter.getFilter().filter(newText);
 
                 return false
             }

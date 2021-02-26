@@ -18,8 +18,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //setting up bottom navigation with nav graph
         setupBottomNavigation()
 
+        //animation on bottom navigation
         openBottomNavigation()
     }
 

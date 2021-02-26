@@ -27,14 +27,22 @@ class ArzFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //get data from local db
+        getDataFromLocalDB()
+
+        //handle search view
+        //visible and invisible title
+        //commands on searching
+        onSearchView()
+
+    }
+
+    private fun getDataFromLocalDB() {
         PriceRepository.getFilterPrice(requireContext(),"arz")?.observe(viewLifecycleOwner,{
             viewModel.updateList(it)
             arzAdapter = ArzAdapter(it)
             binding.recyclerView.adapter = arzAdapter
         })
-
-        onSearchView()
-
     }
 
     private fun onSearchView() {

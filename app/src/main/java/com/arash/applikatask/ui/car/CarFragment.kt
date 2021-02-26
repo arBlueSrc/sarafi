@@ -12,14 +12,14 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CarFragment : BaseFragment() {
 
-    private val viewModel : CarViewModel by viewModel()
-    lateinit var binding : CarFragmentBinding
+    private val viewModel: CarViewModel by viewModel()
+    lateinit var binding: CarFragmentBinding
     lateinit var carAdapter: CarAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = CarFragmentBinding.inflate(inflater)
         return binding.root
     }
@@ -27,13 +27,21 @@ class CarFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        PriceRepository.getFilterPrice(requireContext(),"car")?.observe(viewLifecycleOwner,{
+        //get data from local db
+        getDataFromLocalDB()
+
+        //handle search view
+        //visible and invisible title
+        //commands on searching
+        onSearchView()
+    }
+
+    private fun getDataFromLocalDB() {
+        PriceRepository.getFilterPrice(requireContext(), "car")?.observe(viewLifecycleOwner, {
             viewModel.updateList(it)
             carAdapter = CarAdapter(it)
             binding.rv.adapter = carAdapter
         })
-
-        onSearchView()
     }
 
     private fun onSearchView() {
@@ -42,7 +50,7 @@ class CarFragment : BaseFragment() {
             binding.txtTitleCar.visibility = View.GONE
         }
 
-        binding.searchView.setOnCloseListener(object : SearchView.OnCloseListener{
+        binding.searchView.setOnCloseListener(object : SearchView.OnCloseListener {
             override fun onClose(): Boolean {
                 binding.txtTitleCar.visibility = View.VISIBLE
                 return false
@@ -56,7 +64,7 @@ class CarFragment : BaseFragment() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
 
-                carAdapter.getFilter()?.filter(newText);
+                carAdapter.getFilter().filter(newText);
 
                 return false
             }
