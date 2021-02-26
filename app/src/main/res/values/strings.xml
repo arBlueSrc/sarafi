@@ -14,4 +14,13 @@
     <string name="dec_home_2">صرافی های معتبر</string>
     <string name="update">بروز رسانی</string>
     <string name="dec_other_frag">برای تازه سازی دکمه بروزرسانی در صفحه نخست را بزنید</string>
+
+    //info string
+    <string name="info">فارغ التحصیل رشته برق دانشگاه شهید بهشتی و برنامه نویس اندروید . علاقه بسیار به همکاری با شرکت ها و پروژه های اندرویدی و مرتبط</string>
+    <string name="instagram">مشاهده اینستاگرام</string>
+    <string name="linkedin">مشاهده لینکدین</string>
+    <string name="profile">پروفایل</string>
+
+    //version
+    <string name="version">version 1</string>
 </resources>
